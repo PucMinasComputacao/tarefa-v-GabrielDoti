@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 header {
     background-color: cornsilk;
     display: flex;
@@ -46,13 +50,14 @@ nav {
 
 .carrossel {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
 }
 
 .carrossel img {
+    width: 100%;
     max-width: 250px;
-    height: 350px;
-    padding: 20px;
+    height: auto;
 }
 
 .slide {
@@ -105,4 +110,23 @@ footer {
 .redes {
     max-height: 25px;
     max-width: 25px;
+}
+
+@media (max-width: 768px) {
+    header, nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .opcoes {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .barra {
+        width: 90%;
+        margin-top: 15px;
+    }
 }
